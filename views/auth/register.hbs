@@ -1,0 +1,12 @@
+<form action="/auth/register" method="POST">
+  {{#if error}}
+    <p>{{error}}</p>
+  {{/if}}
+  <input type="text" name="name" placeholder="name" required>
+  <input type="text" name="email" placeholder="email" required>
+  <input type="password" name="password" placeholder="password" required>
+  <input type="password" name="confirm_password" placeholder="confirm password" required>
+  <input type="submit" value="Register">
+</form>
+or <br>
+<a href="/auth/login">Log In!</a>

@@ -1,0 +1,8 @@
+<h2>Aqui van los lugares</h2>
+{{#if Perfil}}
+  {{Perfil.name}}
+{{/if}}
+
+{{#unless Perfil}}
+<a href="/auth/login">log In</a>
+{{/unless}}
