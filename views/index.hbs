@@ -1,8 +1,24 @@
-<h2>Aqui van los lugares</h2>
-{{#if Perfil}}
-  {{Perfil.name}}
-{{/if}}
+  <nav class="navbar navbar-dark" style="background-color: #ffbd3b;">
+    <a href="/" class="navbar-brand">
+      <img src="/images/comedoor-logo.png" width="150px">
+    </a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" id="searchPlace">
+      {{#if Perfil}}
+      <span style="color: white; font-weight: bold;">
+        <a href="/profile">{{Perfil.name}}</a>
+      </span>
+      {{/if}}
+      {{#unless Perfil}}
+        <a href="/auth/login" class="btn btn-outline-success my-2 my-sm-0" type="submit">Log In!</a>
+      
+      {{/unless}}
+    </form>
+  </nav>
+<h2 style="background-color:#e88123; padding: 4px;">Lugares sugeridos</h2>
+<input type="text" placeholder="¿Cuál es tu presupuesto el día de hoy?" class="w-50 ml-auto mr-auto" id="presupuesto" style="margin: 0 auto;">
 
-{{#unless Perfil}}
-<a href="/auth/login">log In</a>
-{{/unless}}
+
+<section class="placesRow">
+  <div class="row" id="places"></div>
+</section>

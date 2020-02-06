@@ -38,8 +38,8 @@ router
     const {name, email, password, confirm_password} = req.body
 
     if( !name || !email || !password ) return res.render('auth/register', {error: 'Todos los campos son obligatorios'})
-    if( password !== confirm_password) return res.render('auth/register', {error: 'Las conttraseñas no coinciden'})
-    if( await User.findOne({email})) return res.render('auth/register', {error: 'Usuario registrado.'})
+    if( password !== confirm_password) return res.render('auth/register', {error: 'Las contraseñas no coinciden'})
+    if( await User.findOne({email})) return res.render('auth/register', {error: 'El usuario ya está registrado.'})
 
     await User.register({ name, email }, password)
     res.redirect('/')
